@@ -45,6 +45,24 @@ Legal documents are often lengthy, complex, and difficult to interpret without p
 5. FLAN-T5 chatbot answers user queries  
 6. Results displayed on web interface  
 
+'''
+Summarizer/
+│
+├── backend/
+│   ├── app.py
+│   ├── analyzer.py
+│   ├── chatbot.py
+│   ├── summarizer.py
+│   ├── extract_text.py
+│   ├── highlight.py
+│   └── gemini_helper.py
+│
+├── frontend/
+├── uploads/
+├── requirements.txt
+├── README.md
+└── .gitignore
+'''
 ---
 ### To run the program
 - python -m venv .venv
