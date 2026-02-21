@@ -46,6 +46,7 @@ Legal documents are often lengthy, complex, and difficult to interpret without p
 6. Results displayed on web interface  
 
 '''
+
 Summarizer/
 │
 ├── backend/
@@ -62,6 +63,7 @@ Summarizer/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+
 '''
 ---
 ### To run the program
