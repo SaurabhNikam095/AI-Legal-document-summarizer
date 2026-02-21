@@ -45,9 +45,12 @@ Legal documents are often lengthy, complex, and difficult to interpret without p
 5. FLAN-T5 chatbot answers user queries  
 6. Results displayed on web interface  
 
-'''
+---
 
-Summarizer/
+# Program structure
+
+```
+AI-Legal-Document-Summarizer/
 │
 ├── backend/
 │   ├── app.py
@@ -59,13 +62,17 @@ Summarizer/
 │   └── gemini_helper.py
 │
 ├── frontend/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
 ├── uploads/
+│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
-'''
----
 ### To run the program
 - python -m venv .venv
 - .venv\Scripts\activate
