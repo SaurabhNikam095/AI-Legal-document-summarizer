@@ -4,18 +4,14 @@ import os
 import json
 from dotenv import load_dotenv
 
-# -----------------------------
 # Import helper modules
-# -----------------------------
 from extract_text import extract_text
 from summarizer import summarize_text
 from analyzer import analyze_summary_metrics
 from highlight import highlight_terms
 from gemini_helper import generate_gemini_response  # ✅ updated fallback handler
 
-# -----------------------------
 # Flask app setup
-# -----------------------------
 app = Flask(__name__, static_folder="frontend", static_url_path="")
 CORS(app)
 
@@ -31,17 +27,12 @@ user_context = {
     "summary": ""
 }
 
-# -----------------------------
 # Serve Frontend (index.html)
-# -----------------------------
 @app.route('/')
 def serve_frontend():
     return send_from_directory(app.static_folder, 'index.html')
 
-
-# -----------------------------
 # File Upload & Text Extraction
-# -----------------------------
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
@@ -58,10 +49,7 @@ def upload_file():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
-# -----------------------------
 # Text Highlighting
-# -----------------------------
 @app.route('/highlight', methods=['POST'])
 def highlight_text_route():
     data = request.get_json()
@@ -77,9 +65,7 @@ def highlight_text_route():
         return jsonify({"error": str(e)}), 500
 
 
-# -----------------------------
 # Summarization & Analysis
-# -----------------------------
 @app.route('/summarize', methods=['POST'])
 def summarize():
     data = request.get_json()
@@ -103,10 +89,7 @@ def summarize():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
-# -----------------------------
 # Multi-Model Comparison
-# -----------------------------
 @app.route('/compare_models_full', methods=['POST'])
 def compare_models_full():
     data = request.get_json()
@@ -137,10 +120,7 @@ def compare_models_full():
 
     return jsonify({"results": comparison_results})
 
-
-# -----------------------------
 # Chatbot (Gemini Fallback Integrated)
-# -----------------------------
 @app.route('/chat', methods=['POST'])
 def chat_with_gemini():
     data = request.get_json()
@@ -165,9 +145,6 @@ def chat_with_gemini():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
-# -----------------------------
 # Run Flask App
-# -----------------------------
 if __name__ == '__main__':
     app.run(debug=True)
