@@ -1,12 +1,4 @@
 import google.generativeai as genai
-
-# NOTE: The API key configuration should ideally be done in app.py 
-# or a separate config file, but for a simple project, configuring it 
-# here or in summarizer.py is common.
-# Assuming API key configuration is done elsewhere, or you add it here:
-# genai.configure(api_key="YOUR_API_KEY_HERE") 
-
-
 def ask_gemini(prompt):
     """
     Sends a prompt to the Gemini model and returns the text response.
