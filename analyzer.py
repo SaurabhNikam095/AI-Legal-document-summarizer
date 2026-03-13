@@ -7,7 +7,7 @@ import json
 # Assuming ask_gemini is imported from chatbot.py or defined here.
 # For simplicity and to use the structured schema, we define the model call here.
 
-# --- Pydantic Schema Definition ---
+# Pydantic Schema Definition 
 class LegalAnalysis(BaseModel):
     """Schema for legal document entity and risk analysis."""
     entity_count_total: int = Field(description="Total number of unique legal entities (names, dates, clauses) found in the document.")
